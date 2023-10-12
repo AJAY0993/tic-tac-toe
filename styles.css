@@ -1,0 +1,115 @@
+*,
+*::after,
+*::before {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+
+:root {
+    --main-bg: #0C1017;
+    --X-bg: #112439;
+    --O-bg: #381E22;
+    --X-stroke: #2475C5;
+    --O-stroke: #E45651;
+    --text-color: #ADADAD;
+}
+
+/* filled xbg 2475C5 
+bg 0C1017 
+background: #12161F;*/
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: var(--main-bg);
+}
+
+.container {
+    width: 600px;
+    max-width: 100%;
+    aspect-ratio: 1/1;
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+}
+
+.container>h2 {
+    font-size: 3rem;
+    color: var(--text-color);
+    text-align: center;
+    margin: .5em;
+}
+
+.row {
+    display: flex;
+    justify-content: space-between;
+}
+
+.column {
+    width: 33%;
+    margin: .5em;
+    aspect-ratio: 1/1;
+    background: #12161F;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.column span {
+    font-size: 5em;
+    font-weight: 400;
+}
+
+.column.filled-x {
+    background: var(--X-bg);
+    border: 1px solid var(--X-stroke);
+}
+
+.column.filled-o {
+    background: var(--O-bg);
+    border: 1px solid var(--O-stroke);
+}
+
+.stroke-x {
+    color: var(--X-stroke);
+
+}
+
+.stroke-o {
+    color: var(--O-stroke);
+}
+
+.startGame,
+.reset {
+    background: var(--O-stroke);
+    padding: 1em;
+    font-size: 1.1rem;
+    width: 300px;
+    margin: 1rem auto;
+    border: none;
+    color: #fff;
+    font-weight: 500;
+
+}
+
+.reset {
+    display: none;
+}
+
+.btn {
+    cursor: pointer;
+}
+
+.btn:active {
+    outline: 0;
+}
+
+@media (max-width:800px) {
+    .container>h2 {
+        font-size: 2rem;
+    }
+}
