@@ -3,6 +3,7 @@ const turn = document.querySelector('.turn')
 const start = document.querySelector('.start')
 const startGame = document.querySelector('.startGame')
 const reset = document.querySelector('.reset')
+const overlay = document.querySelector('.overlay')
 const winAudio = new Audio('victory.mp3')
 
 function game() {
@@ -37,7 +38,10 @@ function game() {
             }
         }
         const currentPlayer = box.getAttribute('data-xoro').toUpperCase()
-        checkWin(currentPlayer)
+        const result = checkWin(currentPlayer)
+        if (result === 'win') {
+            return 0
+        }
         count++
     }))
 }
@@ -59,7 +63,8 @@ function checkWin(player) {
         turn.style.color = `var(--${player}-stroke)`
         turn.innerText = `${player} won`
         winAudio.play()
-        console.log(`${player} won`)
+        overlay.style.display = 'block'
+        return 'win'
     }
     //For columns --------------------------------------------------------------
     else if (((boxes[0].getAttribute('data-xoro') !== 'empty') &&
@@ -77,7 +82,8 @@ function checkWin(player) {
         turn.style.color = `var(--${player}-stroke)`
         turn.innerText = `${player} won`
         winAudio.play()
-        console.log(`${player} won`)
+        overlay.style.display = 'block'
+        return 'win'
     }
     //For diagonals---------------------------------------------------------------------
     else if (((boxes[0].getAttribute('data-xoro') !== 'empty') &&
@@ -91,7 +97,8 @@ function checkWin(player) {
         turn.style.color = `var(--${player}-stroke)`
         turn.innerText = `${player} won`
         winAudio.play()
-        console.log(`${player} won`)
+        overlay.style.display = 'block'
+        return 'win'
     }
 
 }

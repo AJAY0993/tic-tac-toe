@@ -35,7 +35,20 @@ body {
     display: flex;
     flex-direction: column;
     margin: 0 auto;
+    position: relative;
 }
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    opacity: .2;
+    background: #0C1017;
+    display: none;
+}
+
 
 .container>h2 {
     font-size: 3rem;
@@ -96,12 +109,14 @@ body {
 
 }
 
-.reset {
-    display: none;
-}
 
 .btn {
     cursor: pointer;
+    display: block;
+}
+
+.reset {
+    display: none;
 }
 
 .btn:active {
