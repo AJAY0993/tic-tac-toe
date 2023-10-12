@@ -12,6 +12,7 @@ function game() {
     boxes.forEach(box => box.addEventListener('click', (e) => {
         if (box.getAttribute('filled') == 'true') {
             alert('pls select a different box')
+            count--
         }
         else {
             box.setAttribute('filled', 'true')
